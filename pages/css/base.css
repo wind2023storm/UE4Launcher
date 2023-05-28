@@ -1,0 +1,335 @@
+html, body {
+    height: 100%;
+}
+body {
+    background: #131313;
+    color: gray;
+    margin: 0;
+    display: flex;
+    font-family: sansFont;
+    font-size: 15px;
+    position: relative;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav-item.selected, .nav-item.selected a {
+    color: #eee;
+}
+
+nav {
+    width: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    
+}
+
+nav header {
+    position: relative;
+    padding: 1rem 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.nav-item {
+    padding: .8rem 2rem;
+    
+}
+
+
+main {
+    margin-left: 200px;
+    overflow: auto;
+    box-sizing: border-box;
+    width: 100%;
+    flex-flow: column;
+    display: flex;
+    height: 100%;
+    margin-right: 12px;
+}
+
+header {
+    color: #eee;
+}
+
+main header {
+    /* Gradiant border */
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-image: linear-gradient(to top, #2d2d2d, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.content, main header {
+    padding: 0 10px 0 10px;
+}
+
+
+.content {
+    border-top: 1px solid #2d2d2d;
+    border-left: 1px solid #2d2d2d;
+    height: 100%;
+}
+
+
+.eg-logo {
+    width: 34px;
+    height: 40px;
+    vertical-align: middle;
+    padding-right: 18px;
+}
+
+nav header {
+    cursor: default;
+    user-select: none;
+}
+
+.tab {
+    display: inline-block;
+    padding: 18px 20px;
+    color: gray;
+    border-bottom: 3px solid transparent;
+    transition: 200ms color, 200ms border-bottom-color, 200ms background-color;
+}
+
+
+.tab.selectable:hover {
+    color: #b3b3b3;
+    border-bottom-color: #5D4C1D; /*rgba(167, 133, 41, 0.5);*/
+}
+
+.tab.selectable.selected, .tab.selectable.selected a {
+    color: #eee;
+    background-color: #272727;
+    border-bottom-color: #A78529;
+}
+
+.hiddenPane {
+    display: none;
+}
+
+@font-face {
+    font-family: sansFont;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: sansFont;
+    src: url(../fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: sansFont;
+    src: url(../fonts/OpenSans-Italic.ttf);
+    font-style: oblique;
+}
+@font-face {
+    font-family: sansFont;
+    src: url(../fonts/OpenSans-BoldItalic.ttf);
+    font-style: oblique;
+    font-weight: bold;
+}
+
+fieldset {
+    border: none;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-image: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 15px, #2d2d2d 20px, #2d2d2d 100%) 1;
+}
+
+legend {
+    text-transform: uppercase;
+    color: #eee;
+    padding: 20px 12px 20px 0;
+}
+
+#addEngine, #addAsset {
+    background: #A78529;
+    color: #131313;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 7px;
+    margin-left: 8px;
+}
+
+.ue4-engine::before {
+    width: 166px;
+    height: 82px;
+    display: inline-block;
+    background-color: #284461;
+    clip-path: polygon(146px 2px, 164px 20px, 164px 80px, 20px 80px, 2px 61px, 2px 2px);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-image: url(../imgs/logo_cut-black-small.png);
+    background-repeat: no-repeat;
+    background-position: 8px 8px;
+}
+
+.ue4-engine {
+    width: 166px;
+    height: 82px;
+    display: inline-block;
+    background: #A78529;
+    clip-path: polygon(146px 0%, 100% 20px, 100% 100%, 20px 100%, 0% 62px, 0 0);
+    position: relative;
+    margin-right: 10px;
+}
+
+.engine-version {
+    color: #eee;
+    display: inline-block;
+    position: absolute;
+    right: 23px;
+    font-size: 22px;
+}
+
+.engine-launch {
+    color: #131313;
+    display: inline-block;
+    float: right;
+    font-size: 15px;
+    position: absolute;
+    right: 23px;
+    bottom: 10px;
+    background: #a78529;
+    /*border-radius: 6px 0 0 6px;*/
+    border-radius: 6px;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+/*
+.engine-launch::after {
+    content: "▼";
+    position: absolute;
+}
+*/
+
+.project-container {
+    display: inline-block;
+    padding: 20px;
+    position: relative;
+    width: 192px;
+}
+
+.project-img-box {
+    width: 192px;
+    height: 192px;
+    text-align: right;
+    position: relative;
+    cursor: pointer;
+}
+
+.project-version {   
+    background: rgba(30,30,30,.5);
+    padding: 4px;
+    text-shadow: 1px 1px 1px black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    user-select: none;
+}
+
+.project-name {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+
+.vault-item {
+    display: inline-block;
+    width: 175px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 500ms filter;
+    vertical-align: top;
+}
+
+.vault-item-image {
+    width: 175px;
+    height: 175px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 175px;
+    
+    text-align: center;
+    vertical-align: text-top;
+    color: #eee;
+    text-shadow: 0 0 3px black, 0 0 2px black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.vault-item-title {
+    color: #eee;
+}
+
+
+.installing-asset {
+    filter: grayscale(1);
+}
+
+.not-implemented {
+    cursor: not-allowed;
+}
+
+.iconButton {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 200ms opacity;
+    display: inline-block;
+}
+.iconButton:hover {
+    opacity: 0.9;
+}
+
+.spin {
+    animation: spin 0.6s linear infinite;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+iframe {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* Used by the Learn tab */
+.noScroll {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+::-webkit-scrollbar-track {
+    background: #3b3b3b;
+    border-radius: 50px
+}
+::-webkit-scrollbar-thumb {
+    background: #a9a9a9;
+    border-radius: 50px
+}
+::-webkit-scrollbar-thumb:horizontal:hover,::-webkit-scrollbar-thumb:vertical:hover {
+    background: #fff
+}
+::-webkit-scrollbar-track:hover {
+    background: #545454
+}
+::-webkit-scrollbar-button {
+    width: 8px;
+    height: 13px;
+    display: block
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent
+}

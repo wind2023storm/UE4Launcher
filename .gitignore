@@ -1,0 +1,7 @@
+.idea
+node_modules
+etc
+release-builds
+cache/
+config.json
+localAssets.json

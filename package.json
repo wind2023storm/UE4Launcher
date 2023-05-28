@@ -1,0 +1,32 @@
+{
+  "name": "ue4launcher",
+  "version": "0.1.1",
+  "description": "A cross-platform launcher for Unreal Engine",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "debug": "electron --inspect-brk ."
+  },
+  "keywords": [
+    "UE4"
+  ],
+  "author": "nmrugg@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.0",
+    "@electron/remote": "^2.0.8",
+    "request": "^2.88.2"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmrugg/UE4Launcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nmrugg/UE4Launcher/issues"
+  },
+  "homepage": "https://github.com/nmrugg/UE4Launcher#readme"
+}
